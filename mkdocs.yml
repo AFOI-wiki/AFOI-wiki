@@ -20,8 +20,8 @@ nav:
     - 万能欧几里得算法: math/useful_euclidean.md
     - 拉格朗日反演: math/lagrange_inv.md
     - FWT: math/fwt.md
-  - 测试: 
-    - test: test/test.md
+  - 图论:
+    - 二分图的性质: graph/bigraph.md
 
 # Theme
 theme:
