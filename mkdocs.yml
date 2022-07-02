@@ -22,6 +22,8 @@ nav:
     - FWT: math/fwt.md
   - 图论:
     - 二分图的性质: graph/bigraph.md
+  - 杂项:
+    - 摩尔投票法: misc/majority-vote.md
 
 # Theme
 theme:
