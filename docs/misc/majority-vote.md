@@ -1,5 +1,7 @@
 # 摩尔投票法
 
+by Acc_Robin
+
 !!! tip "tip"
     如果你觉得下文比较突兀，可以先看看原 OI-wiki 中的[主元素问题](https://oi-wiki.org/misc/main-element/)
 
