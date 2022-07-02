@@ -41,7 +41,7 @@ int moore(const vector<int>& vec) {
 
 [P2397](http://luogu.com.cn/problem/P2397)：模板。
 
-[[ARC070D] HonestOrUnkind](https://www.luogu.com.cn/problem/AT2348)：难点通常在发现要求的是主元素，毕竟这是一个较冷门的知识点。[题解](/docs/misc/moore/ARC070D.md)
+[[ARC070D] HonestOrUnkind](https://www.luogu.com.cn/problem/AT2348)：难点通常在发现要求的是主元素，毕竟这是一个较冷门的知识点。[题解](afoi-wiki/misc/moore/ARC070D)
 
 ### 线段树维护摩尔投票
 
