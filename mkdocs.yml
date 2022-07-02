@@ -23,7 +23,9 @@ nav:
   - 图论:
     - 二分图的性质: graph/bigraph.md
   - 杂项:
-    - 摩尔投票法: misc/majority-vote.md
+    - 摩尔投票法:
+      - 摩尔投票法: misc/moore/majority-vote.md
+      - 「ARC070D」HonestOrUnkind: misc/moore/ARC070D.md
 
 # Theme
 theme:
