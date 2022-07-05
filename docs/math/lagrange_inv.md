@@ -88,7 +88,7 @@ $$
 \frac{m}{n-m}[x^{n-m-1}](\sum\limits_{i=0}a_ix^i)^{m-1}(\sum\limits_{i=1}ia_ix^{i-1})(\sum\limits_{i=-1}a_ix^{i+1})^{n-m}\\
 $$
 
-我们可以通过类似于上道题的做法，即根据 $f(f^k)'=kf'f^k$，得到一个 $[x^i] (f^k)$ 的递推式，求出 $(\sum\limits_{i=0}a_ix^i)^{m-1}$ 和 $(\sum\limits_{i=-1}a_ix^{i+1})^{n-m}$ 的前 $n-m-1$ 项，在暴力求出卷积的第 $[x^{n-m-1}]$ 项即可。
+我们可以通过类似于上道题的做法，即根据 $f(f^k)'=kf'f^k$，得到一个 $[x^i] (f^k)$ 的递推式，求出 $(\sum\limits_{i=0}a_ix^i)^{m-1}$ 和 $(\sum\limits_{i=-1}a_ix^{i+1})^{n-m}$ 的前 $n-m-1$ 项，再暴力求出卷积的第 $[x^{n-m-1}]$ 项即可。
 
 $$
 b_k=[x^k](\sum\limits_{i=0}a_ix^i)^{m-1}\\
