@@ -191,7 +191,6 @@ a^{b\bmod \varphi(p)} & \gcd(a,p) = 1 \\
 a^b & \gcd(a,p) \neq 1 \land b<\varphi(p) \\
 a^{b \bmod \varphi(p) + \varphi(p)} & \gcd(a, p) = 1 \land b\ge \varphi(p)
 \end{cases}
-
 \pmod p
 $$
 
@@ -310,21 +309,7 @@ $$
 发现 $v(n!)$ 可以在 $O(\log_p n)$ 的时间内计算，现在只需要计算 $r(n!)$ 即可。
 
 $$
-n! = {\color{red}\left[p\cdot 2p\cdot 3p\cdots \lfloor \frac np\rfloor p\right ]} \cdot
-
-{\color{violet} 
-    \left[
-        \left(
-            1\cdot 2 \cdots p-1
-        \right)
-        \cdot 
-        \left(
-            (p+1)\cdot (p+2)\cdots (p+p-1)
-        \right) 
-        \cdots 
-    \right]
-}
-\\
+n! = {\color{red}\left[p\cdot 2p\cdot 3p\cdots \lfloor \frac np\rfloor p\right ]} \cdot {\color{violet}\left[\left(1\cdot 2 \cdots p-1\right)\cdot\left((p+1)\cdot (p+2)\cdots (p+p-1)\right) \cdots \right]}
 $$
 
 我们把 $1\cdot 2 \cdots n$ 拆成两部分，一部分是 $p$ 的倍数（红色，要被除掉），另一部分是剩下的数（紫色）。
@@ -352,36 +337,14 @@ $$
 再考虑红色部分，这部分含有 $p$，是要除以 $p^{v(n!)}$ 的
 
 $$
-\frac{p\cdot 2p\cdots \lfloor \frac np \rfloor p}{p^{v(n!)}} 
-
-=
-
-\frac {
-    p^{\lfloor \frac np\rfloor}\cdot (\lfloor \frac np\rfloor)!
-}{
-    p^{v(n!)}
-}
-
-=
-
-p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!
+\frac{p\cdot 2p\cdots \lfloor \frac np \rfloor p}{p^{v(n!)}} = \frac {p^{\lfloor \frac np\rfloor}\cdot (\lfloor \frac np\rfloor)!}{p^{v(n!)}}=p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!
 $$
 
 又因为 $v(n!)=\lfloor \frac np\rfloor + v\left((\lfloor \frac np\rfloor)!\right) \Leftrightarrow \lfloor \frac np\rfloor - v(n!) =-v\left((\lfloor \frac np\rfloor)!\right)$
 
 所以
 $$
-p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!
-=
-\frac{
-    (\lfloor \frac np \rfloor)!
-}{
-    v\left(
-        (\lfloor \frac np \rfloor)!
-    \right)
-}
-
-= r\left((\lfloor \frac np \rfloor)! \right)
+p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!=\frac{(\lfloor \frac np \rfloor)!}{v\left((\lfloor \frac np \rfloor)!\right)}= r\left((\lfloor \frac np \rfloor)! \right)
 $$
 
 递归计算 $r(n!)$ 即可。
