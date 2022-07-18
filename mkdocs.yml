@@ -18,10 +18,15 @@ nav:
     - 格式手册: intro/format.md
   - 数学:
     - 数论: 
-      - 同余系简述: math/n_t/cgrc.md
+      - 同余系简述: math/n_t/cgrc1.md
+      - 同余系相关算法与定理: math/n_t/cgrc2.md
+    - 组合计数: 
+      - 组合计数: math/count/binom.md
     - 幂级数: 
       - 拉格朗日反演: math/lagrange_inv.md
       - FWT: math/fwt.md
+    - 博弈:
+      - 超现实数: math/game/surreal.md
     - 万能欧几里得算法: math/useful_euclidean.md
   - 图论:
     - 二分图的性质: graph/bigraph.md
