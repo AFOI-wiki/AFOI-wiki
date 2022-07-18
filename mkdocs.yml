@@ -20,7 +20,7 @@ nav:
     - 数论: 
       - 同余系简述: math/n_t/cgrc1.md
       - 同余系相关算法与定理: math/n_t/cgrc2.md
-    - 组合计数
+    - 组合计数: 
       - 组合计数: math/count/binom.md
     - 幂级数: 
       - 拉格朗日反演: math/lagrange_inv.md
