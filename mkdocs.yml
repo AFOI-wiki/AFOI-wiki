@@ -17,6 +17,7 @@ nav:
     - 如何参与: intro/htc.md
     - 格式手册: intro/format.md
   - 数学:
+    - 高中数学与 OI 基础数学快速入门指南: math/elemath.md
     - 数论: 
       - 同余系简述: math/n_t/cgrc1.md
       - 同余系相关算法与定理: math/n_t/cgrc2.md
