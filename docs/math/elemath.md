@@ -168,8 +168,8 @@ $$
 
 $$
     n! =\prod_{i=1}^ni, n!! = \begin{cases}
-        \prod\limits_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
-        \prod\limits_{i=2}^{(n+1)/2}(2i-1) & n\bmod 2=1.
+        \prod\limits_{i=1}^{n/2}2i & n\bmod 2=0, \\ 
+        \prod\limits_{i=1}^{(n+1)/2}(2i-1) & n\bmod 2=1.
     \end{cases}
 $$
 
