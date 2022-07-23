@@ -8,16 +8,16 @@
 
 #### 下取整
 
-对 $a,b(b\neq 0)$，$a=bq+r(0\le r<b)$，称 $q=\lfloor \frac ab \rfloor$
+对 $a,b(b\neq 0)$，$a=bq+r(0\le r<b)$，称 $q=\lfloor \cfrac ab \rfloor$
 
 **常用性质**
 
-- 当 $1\le i\le n$，$\lfloor \frac ni\rfloor$ 有不超过 $2\sqrt n$ 种取值。
+- 当 $1\le i\le n$，$\lfloor \cfrac ni\rfloor$ 有不超过 $2\sqrt n$ 种取值。
 
 ??? note "证明"
-    在 $i\le \sqrt n$ 时，显然不超过 $\sqrt n$ 种；在 $i>\sqrt n$ 时，$1\le \lfloor \frac ni\rfloor\le \sqrt n$，也不超过 $\sqrt n$ 种。
+    在 $i\le \sqrt n$ 时，显然不超过 $\sqrt n$ 种；在 $i>\sqrt n$ 时，$1\le \lfloor \cfrac ni\rfloor\le \sqrt n$，也不超过 $\sqrt n$ 种。
 
-- $\lfloor \frac {\lfloor \frac ab \rfloor}c \rfloor = \lfloor \frac{a}{bc}\rfloor$
+- $\lfloor \cfrac {\lfloor \cfrac ab \rfloor}c \rfloor = \lfloor \cfrac{a}{bc}\rfloor$
 
 ??? note "证明"
     对右侧进行带余除法：
@@ -28,13 +28,13 @@
     对左侧进行带余除法：
     $$
     a=xb+y(0\le y\le b-1)\\
-    \lfloor \frac ab\rfloor =x=uc+v(0\le v\le c-1)\\
+    \lfloor \cfrac ab\rfloor =x=uc+v(0\le v\le c-1)\\
     a=(uc+v)b+y=ubc+vb+y
     $$
 
     因为 $0\le vb+y\le (c-1)b+b-1=bc-1<bc$，且带余除法具有唯一性得证。
 
-- 由上面两条可知，$n$ 无论怎么除，都在 $\{\lfloor \frac ni\rfloor \}$ 这个集合内，且集合大小不超过 $O(\sqrt n)$。
+- 由上面两条可知，$n$ 无论怎么除，都在 $\{\lfloor \cfrac ni\rfloor \}$ 这个集合内，且集合大小不超过 $O(\sqrt n)$。
 
 ### 最大公约数与最小公倍数
 
@@ -48,11 +48,11 @@
 
 - 辗转相除法：$\gcd(a,b)=\gcd(b,a\bmod b)$，特例 $\gcd(a,b)=\gcd(b,a-b)$。
 
-- 使用辗转相除法计算 $\gcd$ 的复杂度为 $O(\log \frac{\min(a,b)}{\gcd(a,b)})$。
+- 使用辗转相除法计算 $\gcd$ 的复杂度为 $O(\log \cfrac{\min(a,b)}{\gcd(a,b)})$。
 
 ??? note"证明"
-    只需证明 $a\bmod b<\frac 12 a$。
-    当 $b \le \frac 12 a$ 时结论显然；当 $b > \frac 12 a$ 时 $a\bmod b = a - b$。
+    只需证明 $a\bmod b<\cfrac 12 a$。
+    当 $b \le \cfrac 12 a$ 时结论显然；当 $b > \cfrac 12 a$ 时 $a\bmod b = a - b$。
 
 - $\gcd(a_1, a_2, \cdots, a_n)=\gcd(a_1,\gcd(a_2, \gcd(\cdots)))$。
 
@@ -85,14 +85,14 @@ $\bmod p$ 同余系就是 $0\sim p-1$ 中所有整数，和 $+,\times$ 运算组
 #### exgcd
 
 $$
-\gcd(a,b)=\gcd(b,a-b\lfloor \frac ab\rfloor)
+\gcd(a,b)=\gcd(b,a-b\lfloor \cfrac ab\rfloor)
 $$
 
 由裴蜀定理，一定存在 $x,y,x',y'$ 使得
 
 $$
-ax + by = bx' + (a - b\lfloor \frac ab\rfloor ) y'\\
-a(x-y')+b(y-x'+\lfloor \frac ab \rfloor y')=0
+ax + by = bx' + (a - b\lfloor \cfrac ab\rfloor ) y'\\
+a(x-y')+b(y-x'+\lfloor \cfrac ab \rfloor y')=0
 $$
 
 因为上式需恒成立成立，则有 $a\cdot 0+b\cdot 0 = 0$
@@ -102,7 +102,7 @@ $$
     \begin{matrix}
     x - y' = 0
     \\
-    y - x'+\lfloor \frac ab \rfloor y' = 0
+    y - x'+\lfloor \cfrac ab \rfloor y' = 0
     \end{matrix}
 \right.
 $$
@@ -114,12 +114,12 @@ $$
     \begin{matrix}
     x = y'
     \\
-    y = x' - \lfloor \frac ab \rfloor y'
+    y = x' - \lfloor \cfrac ab \rfloor y'
     \end{matrix}
 \right.
 $$
 
-类似 $\gcd$ 以此向下递归计算即可，复杂度同样是 $O(\log \frac{\min(a,b)}{\gcd(a,b)})$。
+类似 $\gcd$ 以此向下递归计算即可，复杂度同样是 $O(\log \cfrac{\min(a,b)}{\gcd(a,b)})$。
 
 本质是在求解一个同余方程组 $ax\equiv \gcd(a,b)\pmod b$。
 
@@ -136,16 +136,16 @@ $$
 
 - 积性函数：$a\bot b \Rightarrow \varphi(pq)=\varphi(p)\cdot \varphi(q)$
 
-- 若 $n=p_1^{c_1}\cdot p_2^{c_2} \cdots p_k^{c_k}$（标准素因数分解），则 $\varphi(n)=n\cdot (1-\frac 1{p_1})(1-\frac 1{p_2})\cdots (1-\frac 1{p_k})$。
+- 若 $n=p_1^{c_1}\cdot p_2^{c_2} \cdots p_k^{c_k}$（标准素因数分解），则 $\varphi(n)=n\cdot (1-\cfrac 1{p_1})(1-\cfrac 1{p_2})\cdots (1-\cfrac 1{p_k})$。
 
 ??? "证明"
     求补集，即 $1\sim n$ 中含 $n$ 的素因子的数的个数，相当于对 $n$ 的每个素因数有限制再求并。
 
-    对于素因子集合 $\{p_1,p_2,\cdots, p_s\}$，$1\sim n$ 中是这个集合所有数的倍数的个数为 $\frac n{p_1p_2\cdots p_s}$，并且有容斥系数 $(-1)^{s+1}$。那么最终答案为
+    对于素因子集合 $\{p_1,p_2,\cdots, p_s\}$，$1\sim n$ 中是这个集合所有数的倍数的个数为 $\cfrac n{p_1p_2\cdots p_s}$，并且有容斥系数 $(-1)^{s+1}$。那么最终答案为
     $$
-    n - (\frac n{p_1} + \frac n{p_2} + \cdots - \frac n{p_1p_2}- \frac n{p_1p_3} -\cdots +\cdots)\\
-    = n(1-\frac 1{p_1} - \frac 1{p_2} +\frac 1{p_1p_2}+\frac 1{p_1p_3}-\cdots )\\
-    =n(1-\frac 1{p_1})(1-\frac 1{p_2})\cdots(1-\frac 1{p_k})
+    n - (\cfrac n{p_1} + \cfrac n{p_2} + \cdots - \cfrac n{p_1p_2}- \cfrac n{p_1p_3} -\cdots +\cdots)\\
+    = n(1-\cfrac 1{p_1} - \cfrac 1{p_2} +\cfrac 1{p_1p_2}+\cfrac 1{p_1p_3}-\cdots )\\
+    =n(1-\cfrac 1{p_1})(1-\cfrac 1{p_2})\cdots(1-\cfrac 1{p_k})
     $$
 
 - 若 $d|n$，则 $\varphi(d \cdot n)=d\cdot \varphi(n)$。
@@ -155,7 +155,7 @@ $$
 - $\varphi(\varphi(\varphi(...\varphi(n))))$ 在嵌套 $O(\log n)$ 次后变为 $1$。
 
 ??? "证明"
-    若 $n$ 是 $1$ 则结束；否则若 $n$ 是偶数，因为会有一个 $2$ 变成 $1$，所以$\varphi(n)\le \frac 12n$；否则若 $n$ 是奇数，则必然有一个奇质因子变为偶数。
+    若 $n$ 是 $1$ 则结束；否则若 $n$ 是偶数，因为会有一个 $2$ 变成 $1$，所以$\varphi(n)\le \cfrac 12n$；否则若 $n$ 是奇数，则必然有一个奇质因子变为偶数。
 
 #### 求欧拉函数的方法
 
@@ -272,7 +272,7 @@ auto exCRT = [](int n, const vector<ll>& a, const vector<ll>& p) {
 在 $p$ 是素数时，有
 
 $$
-\binom nm \equiv \binom {\lfloor \frac n p \rfloor}{\lfloor \frac m p\rfloor}\cdot \binom{n \bmod p}{m \bmod p}\pmod p
+\binom nm \equiv \binom {\lfloor \cfrac n p \rfloor}{\lfloor \cfrac m p\rfloor}\cdot \binom{n \bmod p}{m \bmod p}\pmod p
 $$
 
 **重要性质**
@@ -286,9 +286,9 @@ $$
 $\binom {n + m} m$ 中 $p$ 的指数 $=$ $p$ 进制下 $n,m$ 做加法时的进位次数。
 
 ??? "证明"
-    显然有勒让德定理 $v_p(n!)=\sum\limits_{i\ge 1}\lfloor \frac n {p^i} \rfloor$。
+    显然有勒让德定理 $v_p(n!)=\sum\limits_{i\ge 1}\lfloor \cfrac n {p^i} \rfloor$。
     
-    又因为 $\binom{n + m}m=\frac {(n+m)!}{n!m!}$，所以 $v_p(\binom {n+m}m) = v_p((n + m)!) - v_p(n!) - v_p(m!) = \sum\limits_{i\ge 1}\lfloor \frac {n + m}{p^i}\rfloor-\lfloor \frac {n}{p^i}\rfloor - \lfloor \frac {m}{p^i}\rfloor$。
+    又因为 $\binom{n + m}m=\cfrac {(n+m)!}{n!m!}$，所以 $v_p(\binom {n+m}m) = v_p((n + m)!) - v_p(n!) - v_p(m!) = \sum\limits_{i\ge 1}\lfloor \cfrac {n + m}{p^i}\rfloor-\lfloor \cfrac {n}{p^i}\rfloor - \lfloor \cfrac {m}{p^i}\rfloor$。
     
     当且仅当第 $i$ 位产生进位才不会被除掉。
 
@@ -298,18 +298,18 @@ $\binom {n + m} m$ 中 $p$ 的指数 $=$ $p$ 进制下 $n,m$ 做加法时的进�
 
 对 $p$ 素因数分解后使用 CRT 合并即可，现在处理 $\bmod p^k$ 时的答案。
 
-首先有 $v_p(n!) = \sum\limits_{i \ge 1} \lfloor \frac n{p^i} \rfloor$；定义 $r_p(n!) = \frac {n!}{p^{v_p(n)}}$，相当于 $n!$ 去掉所有 $p$ 后剩下的数。后文分别简记为 $v(n!)$ 和 $r(n!)$。
+首先有 $v_p(n!) = \sum\limits_{i \ge 1} \lfloor \cfrac n{p^i} \rfloor$；定义 $r_p(n!) = \cfrac {n!}{p^{v_p(n)}}$，相当于 $n!$ 去掉所有 $p$ 后剩下的数。后文分别简记为 $v(n!)$ 和 $r(n!)$。
 
 所求为
 
 $$
-\binom n m \equiv \frac {n!}{m! (n - m)!} \equiv \frac {r(n!)}{r(m!)r((n-m)!)}\cdot p^{v(n!)-v(m!)-v((n - m)!)} \pmod {p^k} \\
+\binom n m \equiv \cfrac {n!}{m! (n - m)!} \equiv \cfrac {r(n!)}{r(m!)r((n-m)!)}\cdot p^{v(n!)-v(m!)-v((n - m)!)} \pmod {p^k} \\
 $$
 
 发现 $v(n!)$ 可以在 $O(\log_p n)$ 的时间内计算，现在只需要计算 $r(n!)$ 即可。
 
 $$
-n! = {\color{red}\left[p\cdot 2p\cdot 3p\cdots \lfloor \frac np\rfloor p\right ]} \cdot {\color{violet}\left[\left(1\cdot 2 \cdots p-1\right)\cdot\left((p+1)\cdot (p+2)\cdots (p+p-1)\right) \cdots \right]}
+n! = {\color{red}\left[p\cdot 2p\cdot 3p\cdots \lfloor \cfrac np\rfloor p\right ]} \cdot {\color{violet}\left[\left(1\cdot 2 \cdots p-1\right)\cdot\left((p+1)\cdot (p+2)\cdots (p+p-1)\right) \cdots \right]}
 $$
 
 我们把 $1\cdot 2 \cdots n$ 拆成两部分，一部分是 $p$ 的倍数（红色，要被除掉），另一部分是剩下的数（紫色）。
@@ -318,7 +318,7 @@ $$
 
 $$
 \left(
-    \prod_{0\le i<\lfloor \frac{n}{p} \rfloor - 1} 
+    \prod_{0\le i<\lfloor \cfrac{n}{p} \rfloor - 1} 
         \prod_{1\le j < p} (ip+j)
 \right)
 \cdot 
@@ -326,7 +326,7 @@ $$
     \prod_{1\le j\le (n \bmod p) }
         \left(
             \left(
-                \lfloor\frac np\rfloor-1
+                \lfloor\cfrac np\rfloor-1
             \right)p +j
         \right)
 \right)
@@ -337,14 +337,14 @@ $$
 再考虑红色部分，这部分含有 $p$，是要除以 $p^{v(n!)}$ 的
 
 $$
-\frac{p\cdot 2p\cdots \lfloor \frac np \rfloor p}{p^{v(n!)}} = \frac {p^{\lfloor \frac np\rfloor}\cdot (\lfloor \frac np\rfloor)!}{p^{v(n!)}}=p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!
+\cfrac{p\cdot 2p\cdots \lfloor \cfrac np \rfloor p}{p^{v(n!)}} = \cfrac {p^{\lfloor \cfrac np\rfloor}\cdot (\lfloor \cfrac np\rfloor)!}{p^{v(n!)}}=p^{\lfloor \cfrac np \rfloor - v(n!)} \cdot (\lfloor \cfrac np\rfloor)!
 $$
 
-又因为 $v(n!)=\lfloor \frac np\rfloor + v\left((\lfloor \frac np\rfloor)!\right) \Leftrightarrow \lfloor \frac np\rfloor - v(n!) =-v\left((\lfloor \frac np\rfloor)!\right)$
+又因为 $v(n!)=\lfloor \cfrac np\rfloor + v\left((\lfloor \cfrac np\rfloor)!\right) \Leftrightarrow \lfloor \cfrac np\rfloor - v(n!) =-v\left((\lfloor \cfrac np\rfloor)!\right)$
 
 所以
 $$
-p^{\lfloor \frac np \rfloor - v(n!)} \cdot (\lfloor \frac np\rfloor)!=\frac{(\lfloor \frac np \rfloor)!}{v\left((\lfloor \frac np \rfloor)!\right)}= r\left((\lfloor \frac np \rfloor)! \right)
+p^{\lfloor \cfrac np \rfloor - v(n!)} \cdot (\lfloor \cfrac np\rfloor)!=\cfrac{(\lfloor \cfrac np \rfloor)!}{v\left((\lfloor \cfrac np \rfloor)!\right)}= r\left((\lfloor \cfrac np \rfloor)! \right)
 $$
 
 递归计算 $r(n!)$ 即可。
