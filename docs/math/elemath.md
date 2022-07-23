@@ -166,10 +166,10 @@ $$
 
 我们继续保留这种形式, 但把加法改为乘法, $\sum$ 变成 $\prod$, 就变成了**求积**. 借此机会我们还能引入新的概念, 定义
 $$
-n! =\prod_{i=1}^ni, \\
+n! =\prod_{i=1}^ni, 
 n!! = \begin{cases}
-        \prod\limits_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
-        \prod\limits_{i=2}^{(n+1)/2}2i-1 & n\bmod 2=1.
+        \prod_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
+        \prod_{i=2}^{(n+1)/2}2i-1 & n\bmod 2=1.
       \end{cases}
 $$
 其中 $n!$ 为 $n$ 的**阶乘**, $n!!$ 为 $n$ 的**双阶乘**, $\bmod$ 运算符 (读作 "**模**运算符") 则是我们熟悉的带余除法, 如 $5\bmod 2=1$. 不难发现双阶乘实际就是相邻的一串奇数或偶数相乘.
@@ -188,6 +188,7 @@ $$
 
 ???+info "Fubini 定理弱化版"
     假设 $\{a_{nn}\}$ 是一个 $n$ 行 $n$ 列的数表, 第 $i$ 行 $j$ 列的数记为 $a_{ij}$, 则有
+    
     $$
         \sum_{i=1}^n\sum_{j=1}^ia_{ij}=\sum_{j=1}^n\sum_{i=j}^na_{ij}.
     $$
@@ -196,9 +197,11 @@ $$
 
 ???+example "最小二乘估计"
     这是统计学的一个例子, 对于给定的一组散点数据列 $\{(x_n,y_n)\}$, 记其平均数为 $\bar x,\bar y$, 则该数据的回归直线方程参数
+    
     $$
         \hat b=\dfrac{\sum\limits_{i=1}^n(x_i-\bar x)(y_i-\bar y)}{\sum\limits_{i=1}^n(x_i-\bar x)^2}=\dfrac{\sum\limits_{i=1}^nx_iy_i-n\bar x\bar y}{\sum\limits_{i=1}^nx_i^2-n\bar x^2}.
     $$
+    
     请将左式展开后与右式比较检查是否成立.
 
 ### 前 n 项和的通项
@@ -209,6 +212,7 @@ $$
     对于等差数列, $S_n=\dfrac{n(a_1+a_n)}{2}=na_1+\dfrac{n(n-1)}{2}d$.
 
     对于等比数列,
+    
     $$
         a_n = \begin{cases}
             a_1 & q=1 \\ 
@@ -222,11 +226,12 @@ $$
 
 ???+info "引理 (Abel 求和法, 分部求和法)"
     若 $B_n=\sum\limits_{i=1}^nb_i$, 则
+    
     $$
     S_n=a_nB_n-\sum_{i=1}^{n-1}(a_{i+1}-a_i)B_i
     $$
 
-**证** 
+**证** 我们有
 $$
 S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}). \square 
 $$
