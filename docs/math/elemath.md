@@ -125,7 +125,7 @@ $$
 - $(a,b) = \{x\in\mathbb{R}|a < x < b\}$ 为一**开区间**;
 - $(a,b] = \{x\in\mathbb{R}|a < x \leq b\}$ 为一**左开右闭区间**;
 - $[a,b) = \{x\in\mathbb{R}|a \leq x < b\}$ 为一**左闭右开区间**;
-- 特别地, 有 $[a,+\infty)=\{x\in\mathbb{R}|x\geq a\},(a,+\infty)=\{x\in\mathbb{R}|x>a\},(-\infty,a)=\{x\in\mathbb{R}|x<a\},(-\infty,a]=\{x\in\mathbb{R}|x\leq a\}$.
+- 特别地, 有 $[a,+\infty)=\{x\in\mathbb{R}|x\geq a\}$, $(a,+\infty)=\{x\in\mathbb{R}|x>a\}$, $(-\infty,a)=\{x\in\mathbb{R}|x<a\}$, $(-\infty,a]=\{x\in\mathbb{R}|x\leq a\}$.
 
 ???+exampe "例子"
     $x\in[1,3]\Leftrightarrow 1\le x\le 3, (3,2]=(3,3)=\varnothing, \mathbb{R}\setminus\{0\}=(-\infty,0)\cup(0,+\infty)$, 等等.
@@ -147,7 +147,7 @@ $$
 
 ### 求和与求积符号, 巨运算符
 
-我们接下来将引入极为重要的记号以方便后面的讨论. 在等差等比数列的定义中, 我们见到了型如 $\forall i\in(1,n]\cap\mathbb{Z}$ 的记号, 这里的 $i$ 就不是一个有具体含义的量, 而是为了表达我们取遍了满足条件的所有数, 这种用来辅助说明的变量称为**指标**. 接下来我们用大写的希腊字母 $\sum$ 来定义这样的过程:
+我们接下来将引入极为重要的记号以方便后面的讨论. 在等差等比数列的定义中, 我们见到了形如 $\forall i\in(1,n]\cap\mathbb{Z}$ 的记号, 这里的 $i$ 就不是一个有具体含义的量, 而是为了表达我们取遍了满足条件的所有数, 这种用来辅助说明的变量称为**指标**. 接下来我们用大写的希腊字母 $\sum$ 来定义这样的过程:
 $$
 \sum_{i\in [1,n]\cap\mathbb{Z}} a_i = a_1+a_2+\cdots+a_n 
 $$
@@ -166,7 +166,11 @@ $$
 
 我们继续保留这种形式, 但把加法改为乘法, $\sum$ 变成 $\prod$, 就变成了**求积**. 借此机会我们还能引入新的概念, 定义
 $$
-n! =\prod_{i=1}^ni, \\ n!! = \begin{cases}\prod\limits_{i=2}^{n/2}2i & n\bmod 2=0, \\ \prod\limits_{i=2}^{(n+1)/1}2i-1 & n\bmod 2=1.\end{cases}
+n! =\prod_{i=1}^ni, \\
+n!! = \begin{cases}
+        \prod\limits_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
+        \prod\limits_{i=2}^{(n+1)/2}2i-1 & n\bmod 2=1.
+      \end{cases}
 $$
 其中 $n!$ 为 $n$ 的**阶乘**, $n!!$ 为 $n$ 的**双阶乘**, $\bmod$ 运算符 (读作 "**模**运算符") 则是我们熟悉的带余除法, 如 $5\bmod 2=1$. 不难发现双阶乘实际就是相邻的一串奇数或偶数相乘.
 
@@ -185,7 +189,7 @@ $$
 ???+info "Fubini 定理弱化版"
     假设 $\{a_{nn}\}$ 是一个 $n$ 行 $n$ 列的数表, 第 $i$ 行 $j$ 列的数记为 $a_{ij}$, 则有
     $$
-    \sum_{i=1}^n\sum_{j=1}^ia_{ij}=\sum_{j=1}^n\sum_{i=j}^na_{ij}.
+        \sum_{i=1}^n\sum_{j=1}^ia_{ij}=\sum_{j=1}^n\sum_{i=j}^na_{ij}.
     $$
 
 请自己完成证明. $\square$
@@ -193,7 +197,7 @@ $$
 ???+example "最小二乘估计"
     这是统计学的一个例子, 对于给定的一组散点数据列 $\{(x_n,y_n)\}$, 记其平均数为 $\bar x,\bar y$, 则该数据的回归直线方程参数
     $$
-    \hat b=\dfrac{\sum\limits_{i=1}^n(x_i-\bar x)(y_i-\bar y)}{\sum\limits_{i=1}^n(x_i-\bar x)^2}=\dfrac{\sum\limits_{i=1}^nx_iy_i-n\bar x\bar y}{\sum\limits_{i=1}^nx_i^2-n\bar x^2}.
+        \hat b=\dfrac{\sum\limits_{i=1}^n(x_i-\bar x)(y_i-\bar y)}{\sum\limits_{i=1}^n(x_i-\bar x)^2}=\dfrac{\sum\limits_{i=1}^nx_iy_i-n\bar x\bar y}{\sum\limits_{i=1}^nx_i^2-n\bar x^2}.
     $$
     请将左式展开后与右式比较检查是否成立.
 
@@ -206,7 +210,10 @@ $$
 
     对于等比数列,
     $$
-        a_n = \begin{cases}a_1 & q=1 \\ \dfrac{a_1(1-q^n)}{1-q} & q\neq 1\end{cases}.
+        a_n = \begin{cases}
+            a_1 & q=1 \\ 
+            \dfrac{a_1(1-q^n)}{1-q} & q\neq 1
+           \end{cases}.
     $$
 
 **证** 这里只证等比数列 $q\neq 1$ 的情况, 注意到 $qS_n=\sum\limits_{i=1}^nqa_i=\sum\limits_{i=2}^{n+1}a_{i+1}$, 与 $S_n=\sum\limits_{i=1}^na_i$ 相减即得 $(1-q)S_n=a_1(1-q^n)$. $\square$
@@ -221,17 +228,20 @@ $$
 
 **证** 
 $$
-S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}).\ \square 
+S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}). \square 
 $$
-
 则我们直接应用引理有 
 $$
-\begin{aligned}S_n &=a_n\frac{b_1(1-q^n)}{1-q}-\frac{db_1}{1-q}\sum_{i=1}^{n-1}(1-q^i) \\ &=\frac{b_1}{1-q}\left(a_n(1-q^n)-(n-1)d+\frac{d(q-q^n)}{1-q}\right) \\ &= \frac{b_1}{1-q}\left(a_1+\frac{qd}{1-q}-\left(a_n+\frac{d}{1-q}\right)q^n\right).\end{aligned}
+\begin{aligned}
+    S_n &=a_n\frac{b_1(1-q^n)}{1-q}-\frac{db_1}{1-q}\sum_{i=1}^{n-1}(1-q^i) \\ 
+    &=\frac{b_1}{1-q}\left(a_n(1-q^n)-(n-1)d+\frac{d(q-q^n)}{1-q}\right) \\ 
+    &= \frac{b_1}{1-q}\left(a_1+\frac{qd}{1-q}-\left(a_n+\frac{d}{1-q}\right)q^n\right).
+\end{aligned}
 $$
 
-???+note "练习"
+???+question "练习"
     已知 $\{a_n\}$ 为等差数列且 $d\neq0$, $\{b_n\}$ 为等比数列且 $q\neq1$, 已知 $\{a_n+b_n\}$ 的前四项分别是 $0,5,11,19$, 求 $S_n=\sum_{i=1}^na_ib_i$.
 
-        ??? mdui-shadow-6 "请先思考再看答案"
+        ??? note "请先思考再看答案"
             将数列的前四项列出方程组 (只使用 $a_1,b_1,d,q$), 化简方程组得到一元三次方程 $(q-1)^2(q-2)=0$, 解得 $q=2$, 则 $a_1=-1,d=4,b_1=1,q=2$, 代入上文计算公式得 $S_n=(4n-9)2^n+9$.
 
