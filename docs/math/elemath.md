@@ -166,11 +166,11 @@ $$
 
 我们继续保留这种形式, 但把加法改为乘法, $\sum$ 变成 $\prod$, 就变成了**求积**. 借此机会我们还能引入新的概念, 定义
 $$
-n! =\prod_{i=1}^ni, 
-n!! = \begin{cases}
-        \prod_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
-        \prod_{i=2}^{(n+1)/2}2i-1 & n\bmod 2=1.
-      \end{cases}
+    n! =\prod_{i=1}^ni, 
+    n!! = \begin{cases}
+            \prod\limits_{i=2}^{n/2}2i & n\bmod 2=0, \\ 
+            \prod\limits_{i=2}^{(n+1)/2}2i-1 & n\bmod 2=1.
+          \end{cases}
 $$
 其中 $n!$ 为 $n$ 的**阶乘**, $n!!$ 为 $n$ 的**双阶乘**, $\bmod$ 运算符 (读作 "**模**运算符") 则是我们熟悉的带余除法, 如 $5\bmod 2=1$. 不难发现双阶乘实际就是相邻的一串奇数或偶数相乘.
 
@@ -235,6 +235,7 @@ $$
 $$
 S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}). \square 
 $$
+
 则我们直接应用引理有 
 $$
 \begin{aligned}
