@@ -232,21 +232,23 @@ $$
     $$
 
 **证** 我们有
+
 $$
-S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}). \square 
+    S_n=\sum_{i=1}^na_i(B_i-B_{i-1})=a_nB_n+\sum_{i=1}^{n-1}B_i(a_{i}-a_{i+1}). \square 
 $$
 
 则我们直接应用引理有 
+
 $$
-\begin{aligned}
-    S_n &=a_n\frac{b_1(1-q^n)}{1-q}-\frac{db_1}{1-q}\sum_{i=1}^{n-1}(1-q^i) \\ 
-    &=\frac{b_1}{1-q}\left(a_n(1-q^n)-(n-1)d+\frac{d(q-q^n)}{1-q}\right) \\ 
-    &= \frac{b_1}{1-q}\left(a_1+\frac{qd}{1-q}-\left(a_n+\frac{d}{1-q}\right)q^n\right).
-\end{aligned}
+    \begin{aligned}
+        S_n &=a_n\frac{b_1(1-q^n)}{1-q}-\frac{db_1}{1-q}\sum_{i=1}^{n-1}(1-q^i) \\ 
+        &=\frac{b_1}{1-q}\left(a_n(1-q^n)-(n-1)d+\frac{d(q-q^n)}{1-q}\right) \\ 
+        &= \frac{b_1}{1-q}\left(a_1+\frac{qd}{1-q}-\left(a_n+\frac{d}{1-q}\right)q^n\right).
+    \end{aligned}
 $$
 
 ???+question "练习"
-    已知 $\{a_n\}$ 为等差数列且 $d\neq0$, $\{b_n\}$ 为等比数列且 $q\neq1$, 已知 $\{a_n+b_n\}$ 的前四项分别是 $0,5,11,19$, 求 $S_n=\sum_{i=1}^na_ib_i$.
+    已知 $\{a_n\}$ 为等差数列且 $d\neq0$, $\{b_n\}$ 为等比数列且 $q\neq1$, 已知 $\{a_n+b_n\}$ 的前四项分别是 $0,5,11,19$, 求 $S_n=\sum\limits_{i=1}^na_ib_i$.
 
     ??? note "请先思考再看答案"
         将数列的前四项列出方程组 (只使用 $a_1,b_1,d,q$), 化简方程组得到一元三次方程 $(q-1)^2(q-2)=0$, 解得 $q=2$, 则 $a_1=-1,d=4,b_1=1,q=2$, 代入上文计算公式得 $S_n=(4n-9)2^n+9$.
