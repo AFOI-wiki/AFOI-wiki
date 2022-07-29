@@ -29,6 +29,7 @@ nav:
     - 博弈:
       - 超现实数: math/game/surreal.md
     - 万能欧几里得算法: math/useful_euclidean.md
+    - Berlekamp–Massey 算法: math/bm.md
   - 图论:
     - 二分图的性质: graph/bigraph.md
   - 杂项:
