@@ -63,7 +63,7 @@ $$
 
 我们需要已知 $a_0,a_1\dots a_{m-2}$。
 
-设 $F(x)=x^{m-1}-\sum\limits_{i=1}^{m-1}r_ix^{m-1-i}$，$G(x)=x^n\bmod F(x)=\sum\limits_{i=0}^{m-2}g_ix^i$。
+设 $F(x)=\sum\limits_{i=0}^{m-1}r_ix^{m-1-i}$，$G(x)=x^n\bmod F(x)=\sum\limits_{i=0}^{m-2}g_ix^i$。
 
 则答案为 $\sum\limits_{i=0}^{m-2}g_ia_i$。
 
