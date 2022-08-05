@@ -30,12 +30,16 @@ nav:
       - 超现实数: math/game/surreal.md
     - 万能欧几里得算法: math/useful_euclidean.md
     - Berlekamp–Massey 算法: math/bm.md
+  - 数据结构:
+    - 替罪羊树: ds/sgt.md
   - 图论:
     - 二分图的性质: graph/bigraph.md
   - 杂项:
     - 摩尔投票法:
       - 摩尔投票法: misc/moore/majority-vote.md
       - 「ARC070D」HonestOrUnkind: misc/moore/ARC070D.md
+    - 模拟退火:
+      - 模拟退火: /misc/sgt.md
 
 # Theme
 theme:
