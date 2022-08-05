@@ -39,7 +39,7 @@ nav:
       - 摩尔投票法: misc/moore/majority-vote.md
       - 「ARC070D」HonestOrUnkind: misc/moore/ARC070D.md
     - 模拟退火:
-      - 模拟退火: /misc/sgt.md
+      - 模拟退火: /misc/sa.md
 
 # Theme
 theme:
