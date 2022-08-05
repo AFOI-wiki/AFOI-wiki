@@ -19,7 +19,9 @@
 
 主要操作的时间复杂度：
 - 查找：由于每经过一个节点，子树大小最大为节点大小乘 $\alpha$，所以复杂度为 $O(\log_{1/\alpha} n)=O(\log n)$。（排名/按排名寻找同理）
+
 - 插入：如果不触发重构，复杂度同查找，为 $O(\log n)$，而将一棵大小为 $x$ 的完美二叉树插入到触发重构需要大约 $\cfrac{x}{2(1-\alpha)}-x=\cfrac{2\alpha-1}{2-2\alpha}x$ 次插入，单次重构花费的代价为 $O(x)$，均摊到每一次上的重构代价为 $O(\cfrac{x}{\frac{2\alpha-1}{2-2\alpha}x})=O(\cfrac{2-2\alpha}{2\alpha-1})=O(1)$，即插入的均摊代价为 $O(\log n)$。
+
 - 删除：类比插入，区别为触发需要的删除次数为 $x-\cfrac{x}{2\alpha}=\cfrac{2\alpha-1}{2\alpha}x$，均摊重构代价为 $O( \cfrac{x}{\frac{2\alpha-1}{2\alpha}x})=O(\cfrac{2\alpha}{2\alpha-1})=O(1)$，均摊代价依然为 $O(\log n)$。
 
 所以替罪羊各操作的复杂度均为 $O(\log n)$。
